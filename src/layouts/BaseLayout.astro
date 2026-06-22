@@ -1,8 +1,10 @@
 ---
 import { ClientRouter } from 'astro:transitions';
-import { SITE_TITLE, SITE_AUTHOR, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE } from '../consts';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+import BackToTop from '../components/BackToTop.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -14,37 +16,16 @@ interface Props {
 
 const {
   title,
-  description = SITE_DESCRIPTION,
+  description,
   image,
   ogType = 'website',
 } = Astro.props;
-
-const pageTitle = title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 ---
 
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <title>{pageTitle}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content={SITE_AUTHOR} />
-    <meta name="robots" content="index, follow" />
-
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:type" content={ogType} />
-    <meta property="og:description" content={description} />
-    {image && <meta property="og:image" content={image} />}
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={pageTitle} />
-    <meta name="twitter:description" content={description} />
-    {image && <meta name="twitter:image" content={image} />}
-
+    <SEO title={title} description={description} image={image} ogType={ogType} />
     <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
 
     <script is:inline>
@@ -87,6 +68,7 @@ const pageTitle = title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
       <slot />
     </main>
     <Footer />
+    <BackToTop />
 
     <script>
       function initCopyButtons() {
