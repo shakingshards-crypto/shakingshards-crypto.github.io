@@ -1,7 +1,7 @@
 ---
 title: 从零搭建博客
 description: 详细介绍如何基于 Sify Blog 主题从零搭建个人博客，包括安装、配置、编写文章和部署全流程。
-date: 2024-05-10
+date: 2026-06-10
 tags: [教程, 入门]
 category: 教程
 cover: https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200

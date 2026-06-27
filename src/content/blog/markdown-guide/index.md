@@ -1,7 +1,7 @@
 ---
 title: Markdown 语法指南
 description: 本主题支持的全部 Markdown 语法示例，包括标题、列表、表格、代码块、引用、图片等。
-date: 2024-05-20
+date: 2026-06-10
 tags: [Markdown, 教程]
 category: 教程
 cover: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200

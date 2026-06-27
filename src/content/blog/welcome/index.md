@@ -1,7 +1,7 @@
 ---
 title: 欢迎使用 Sify Blog
 description: Sify Blog 是一个基于 Astro 6 + Tailwind CSS v4 构建的现代化博客主题，开箱即用。
-date: 2024-06-01
+date: 2026-06-10
 tags: [Astro, 介绍]
 category: 笔记
 pinned: true

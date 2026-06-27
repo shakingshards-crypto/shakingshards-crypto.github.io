@@ -1,7 +1,7 @@
 ---
 title: Mermaid 图表使用指南
 description: 在 Markdown 中使用 Mermaid 绘制流程图、序列图、甘特图等图表
-date: 2024-05-25
+date: 2026-06-10
 tags: [教程, Mermaid, 图表]
 category: 教程
 cover: https://mermaid.js.org/images/header.png

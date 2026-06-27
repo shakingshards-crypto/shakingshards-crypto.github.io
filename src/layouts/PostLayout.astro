@@ -18,27 +18,96 @@ interface Props {
   cover?: string;
   series?: string;
   currentSlug?: string;
+  date?: Date;
+  category?: string;
+  tags?: string[];
 }
 
-const {title, description, headings, cover, series, currentSlug} = Astro.props;
+const {title, description, headings, cover, series, currentSlug, date, category, tags} = Astro.props;
 const hasHeadings = headings && headings.length > 0;
+
+function formatDate(d: Date) {
+  return d.toISOString().split('T')[0];
+}
 ---
 
 <BaseLayout title={title} description={description} ogType="article" image={cover}>
   <ReadingProgress />
-  {
-    cover && (
-      <div class="relative w-full h-64 sm:h-80 lg:h-96 overflow-hidden -mt-16 mb-8">
-        <img
-          src={cover}
-          alt={title}
-          class="w-full h-full object-cover"
-          loading="eager"
-        />
-        <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-[#121212] via-white/40 dark:via-[#121212]/40 to-transparent"></div>
+
+  <section class:list={['relative overflow-hidden', cover ? 'min-h-[60vh] sm:min-h-[70vh] flex items-end' : '']} data-hero>
+    {cover ? (
+      <>
+        <div class="absolute inset-0" data-hero-parallax>
+          <img
+            src={cover}
+            alt={title}
+            class="w-full h-full object-cover scale-110"
+            loading="eager"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+        </div>
+
+        <div class="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 text-white w-full">
+          <div class="hero-reveal" data-hero-reveal>
+            {category && (
+              <a href={`/categories/${category}`} class="inline-block text-xs font-medium text-primary bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full mb-4 hover:bg-white/20 transition-colors">
+                {category}
+              </a>
+            )}
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight leading-tight">
+              {title}
+            </h1>
+            {description && (
+              <p class="text-lg text-white/70 font-light mb-6 leading-relaxed max-w-2xl">
+                {description}
+              </p>
+            )}
+            <div class="flex flex-wrap items-center gap-4 text-sm text-white/50">
+              {date && <time datetime={formatDate(date)}>{formatDate(date)}</time>}
+              {tags && tags.length > 0 && (
+                <div class="flex items-center gap-2">
+                  {tags.map((tag) => (
+                    <a href={`/tags/${tag}`} class="hover:text-primary transition-colors">
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </>
+    ) : (
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-8 pb-4 w-full">
+        {category && (
+          <a href={`/categories/${category}`} class="inline-block text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full mb-4">
+            {category}
+          </a>
+        )}
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight leading-tight">
+          {title}
+        </h1>
+        {description && (
+          <p class="text-lg text-gray-500 dark:text-gray-400 font-light mb-4 leading-relaxed max-w-2xl">
+            {description}
+          </p>
+        )}
+        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 dark:text-gray-500">
+          {date && <time datetime={formatDate(date)}>{formatDate(date)}</time>}
+          {tags && tags.length > 0 && (
+            <div class="flex items-center gap-2">
+              {tags.map((tag) => (
+                <a href={`/tags/${tag}`} class="hover:text-primary transition-colors">
+                  #{tag}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    )
-  }
+    )}
+  </section>
+
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col lg:flex-row gap-8 py-8">
       <div class="flex-1 min-w-0 order-1">
@@ -166,4 +235,54 @@ const hasHeadings = headings && headings.length > 0;
     init();
     document.addEventListener('astro:after-swap', init);
   })();
+</script>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  function initHero() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero = document.querySelector('[data-hero]');
+    const parallaxLayer = document.querySelector('[data-hero-parallax]');
+    const reveals = document.querySelectorAll('[data-hero-reveal]');
+
+    if (!hero || !parallaxLayer) return;
+
+    gsap.fromTo(parallaxLayer,
+      { y: 0 },
+      {
+        y: 50,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: hero,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      }
+    );
+
+    if (reveals.length > 0) {
+      gsap.fromTo(reveals,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          delay: 0.1,
+        }
+      );
+    }
+  }
+
+  initHero();
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(initHero, 100);
+  });
 </script>
