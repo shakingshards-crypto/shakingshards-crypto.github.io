@@ -7,7 +7,7 @@ category: 教程
 cover: https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200
 ---
 
-> 在线预览：[astro-theme-sify-demo.vercel.app](https://astro-theme-sify-demo.vercel.app/) | GitHub：[santisify/astro-theme-sify](https://github.com/santisify/astro-theme-sify)
+> 在线预览：[astro-sify-demo.lazy-boy-acmer.cn](https://astro-sify-demo.lazy-boy-acmer.cn/) | GitHub：[santisify/astro-theme-sify](https://github.com/santisify/astro-theme-sify)
 
 ## 环境准备
 

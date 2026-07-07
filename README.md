@@ -10,7 +10,7 @@
 
 ## Demo
 
-在线预览：[astro-theme-sify-demo.vercel.app](https://astro-theme-sify-demo.vercel.app/)
+在线预览：[astro-theme-sify-demo.vercel.app](https://astro-sify-demo.lazy-boy-acmer.cn/)
 
 ## 特性
 
