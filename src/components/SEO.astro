@@ -29,6 +29,19 @@ const {
   noIndex = false,
 } = Astro.props;
 
+const defaultKeywords = [
+  'ak3k',
+  'diseño gráfico',
+  'edición de video',
+  'banners',
+  'headers',
+  'posters',
+  'diseñador freelance',
+  'editor de video freelance',
+  'portafolio creativo'
+];
+const keywordsList = tags.length > 0 ? tags : defaultKeywords;
+
 const pageTitle = title ? `${title} - ${SITE_TITLE}` : SITE_TITLE;
 const canonical = canonicalUrl || `${SITE_URL}${Astro.url.pathname}`;
 const imageUrl = image?.startsWith('http') ? image : image ? `${SITE_URL}${image}` : undefined;
@@ -88,7 +101,7 @@ const escapedDescription = description.replace(/"/g, '&quot;');
 <meta name="twitter:description" content={escapedDescription} />
 {imageUrl && <meta name="twitter:image" content={imageUrl} />}
 
-{tags.length > 0 && <meta name="keywords" content={tags.join(', ')} />}
+<meta name="keywords" content={keywordsList.join(', ')} />
 
 {ogType === 'article' && publishedTime && (
   <meta property="article:published_time" content={publishedTime} />

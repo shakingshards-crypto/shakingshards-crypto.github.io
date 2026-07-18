@@ -3,7 +3,7 @@ import { SITE_TITLE, NAV_ITEMS } from '@/consts';
 import Search from '@/components/Search.astro';
 
 function isArticleLabel(item: typeof NAV_ITEMS[number]) {
-  return item.label === 'Archives' || item.label === '文章' || item.label === 'Archivo';
+  return item.label === 'Archives' || item.label === '文章' || item.label === 'Archivo' || item.label === 'Proyectos';
 }
 ---
 
@@ -34,7 +34,7 @@ function isArticleLabel(item: typeof NAV_ITEMS[number]) {
                   <span>Etiquetas</span>
                 </a>
                 <a href="/archives" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary hover:bg-primary/5 transition-colors">
-                  <span>Archivo</span>
+                  <span>Ver todo</span>
                 </a>
               </div>
             </div>
@@ -50,6 +50,16 @@ function isArticleLabel(item: typeof NAV_ITEMS[number]) {
       </nav>
 
       <div class="flex items-center gap-2">
+        <a
+          href="/about#contacto"
+          class="hidden sm:inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-primary text-white hover:bg-primary-dark shadow-sm shadow-primary/20 transition-all hover:scale-[1.03] active:scale-[0.98]"
+        >
+          <span>Contrátame</span>
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+
         <button
           id="search-trigger"
           class="flex items-center gap-1.5 p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -105,7 +115,7 @@ function isArticleLabel(item: typeof NAV_ITEMS[number]) {
                   <span>Etiquetas</span>
                 </a>
                 <a href="/archives" class="flex items-center px-3 py-2.5 text-sm text-gray-500 dark:text-gray-400 hover:text-primary transition-colors min-h-[44px]">
-                  <span>Archivo</span>
+                  <span>Ver todo</span>
                 </a>
               </div>
             )}

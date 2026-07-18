@@ -16,8 +16,11 @@ const startYear = 2026;
 
 const marqueeItems = [
   ...NAV_ITEMS,
-  { label: `${Math.round(totalWords / 1000)}k palabras`, href: '#' },
-  { label: `${totalArticles} artículos`, href: '#' },
+  { label: 'Posters', href: '#' },
+  { label: 'Miniaturas', href: '#' },
+  { label: 'Banners', href: '#' },
+  { label: 'Headers', href: '#' },
+  { label: 'Edición de video', href: '#' },
   { label: 'Astro', href: 'https://astro.build' },
   { label: 'Tailwind CSS', href: 'https://tailwindcss.com' },
 ];
@@ -46,9 +49,13 @@ const marqueeItems = [
         <p class="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
           {SITE_DESCRIPTION}
         </p>
-        <div class="flex items-center gap-3 mt-4">
+        <div class="flex flex-col gap-2 mt-4">
           <span class="text-xs text-gray-400 dark:text-gray-500">
-            {totalArticles} artículos · {Math.round(totalWords / 1000)}k palabras
+            {totalArticles} trabajos de diseño y edición
+          </span>
+          <span class="inline-flex items-center gap-1.5 text-xs text-green-500 font-medium">
+            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+            Disponible para proyectos y colaboraciones
           </span>
         </div>
       </div>
