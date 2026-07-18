@@ -1,62 +1,62 @@
 ---
-title: Markdown 语法指南
-description: 本主题支持的全部 Markdown 语法示例，包括标题、列表、表格、代码块、引用、图片等。
+title: Markdown Syntax Guide
+description: Examples of all Markdown syntax supported by this theme, including headings, lists, tables, code blocks, blockquotes, images, etc.
 date: 2026-06-10
-tags: [Markdown, 教程]
-category: 教程
+tags: [Markdown, Tutorial]
+category: Tutorial
 cover: https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200
 ---
 
-## 标题
+## Headings
 
-# H1 一级标题
-## H2 二级标题
-### H3 三级标题
-#### H4 四级标题
+# H1 Heading
+## H2 Heading
+### H3 Heading
+#### H4 Heading
 
-## 文本格式
+## Text Formatting
 
-**粗体**、*斜体*、~~删除线~~、`行内代码`、[超链接](https://astro.build)。
+**Bold**, *Italic*, ~~Strikethrough~~, `Inline Code`, [Hyperlink](https://astro.build).
 
-## 列表
+## Lists
 
-### 无序列表
+### Unordered List
 
-- 第一项
-- 第二项
-  - 嵌套项
-  - 另一个嵌套项
-- 第三项
+- First item
+- Second item
+  - Nested item
+  - Another nested item
+- Third item
 
-### 有序列表
+### Ordered List
 
-1. 第一步
-2. 第二步
-3. 第三步
+1. Step one
+2. Step two
+3. Step three
 
-### 任务列表
+### Task List
 
-- [x] 已完成的任务
-- [ ] 待办事项
-- [ ] 另一项待办
+- [x] Completed task
+- [ ] Todo item
+- [ ] Another todo item
 
-## 引用
+## Blockquotes
 
-> 这是一段引用文字。
+> This is a blockquote.
 >
-> 可以有多行和多段。
+> It can span multiple lines and paragraphs.
 >
-> > 嵌套引用
+> > Nested blockquote
 
-## 表格
+## Tables
 
-| 姓名 | 年龄 | 城市 |
+| Name | Age | City |
 |------|------|------|
-| 张三 | 25 | 北京 |
-| 李四 | 30 | 上海 |
-| 王五 | 28 | 深圳 |
+| John | 25 | New York |
+| Emma | 30 | London |
+| Mike | 28 | Tokyo |
 
-## 代码块
+## Code Blocks
 
 ### TypeScript
 
@@ -110,24 +110,24 @@ for file in *.md; do
 done
 ```
 
-代码块支持语言标签显示、一键复制和行号。复制按钮在右上角，点击后显示 ✓ 表示已复制。
+Code blocks support language tags, copy-to-clipboard, and line numbers. The copy button is located in the top-right corner.
 
-## 分割线
+## Horizontal Rule
 
 ---
 
-## 图片
+## Images
 
-![风景](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
+![Scenery](https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800)
 
-## 脚注
+## Footnotes
 
-这是一段带脚注的文字[^1]。
+Here is a simple footnote[^1].
 
-[^1]: 这是脚注内容。
+[^1]: This is the footnote content.
 
-## HTML 嵌入
+## HTML Embedding
 
 <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-4 text-sm">
-  提示：本主题支持在 Markdown 中嵌入 HTML 标签。
+  Tip: This theme supports embedding HTML tags within Markdown.
 </div>

@@ -1,19 +1,19 @@
 ---
-title: 欢迎使用 Sify Blog
-description: Sify Blog 是一个基于 Astro 6 + Tailwind CSS v4 构建的现代化博客主题，开箱即用。
+title: Welcome to Sify Blog
+description: Sify Blog is a modern blog theme built with Astro 6 + Tailwind CSS v4, ready to use out of the box.
 date: 2026-06-10
-tags: [Astro, 介绍]
-category: 笔记
+tags: [Astro, Introduction]
+category: Notes
 pinned: true
 cover: https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200
 ---
 
-Sify Blog 是一个功能完备的 Astro 博客主题，基于 Astro 6 和 Tailwind CSS v4 构建。如果你正在寻找一个简洁、现代、易于定制的博客模板，那你就来对地方了。
+Sify Blog is a fully-featured Astro blog theme built on Astro 6 and Tailwind CSS v4. If you are looking for a clean, modern, and easy-to-customize blog template, you've come to the right place.
 
-- [在线预览 Demo](https://astro-theme-sify-demo.vercel.app/)
-- [GitHub 仓库](https://github.com/santisify/astro-theme-sify)
+- [Live Demo](https://astro-theme-sify-demo.vercel.app/)
+- [GitHub Repository](https://github.com/santisify/astro-theme-sify)
 
-## 快速开始
+## Quick Start
 
 ```bash
 git clone https://github.com/santisify/astro-theme-sify.git my-blog
@@ -22,51 +22,51 @@ bun install
 bun dev
 ```
 
-打开 `http://localhost:4321` 即可预览。详细步骤请参考 [从零搭建博客](/post/getting-started)。
+Open `http://localhost:4321` to preview. For detailed steps, please refer to [Building a Blog from Scratch](/post/getting-started).
 
-## 特性一览
+## Features
 
-| 特性 | 说明 |
+| Feature | Description |
 |------|------|
-| Markdown / MDX | 支持标准 Markdown 和 JSX 组件 |
-| 数学公式 | KaTeX 渲染行内和块级公式 |
-| Mermaid 图表 | 流程图、序列图、甘特图等 |
-| 代码高亮 | Shiki 双主题，语言标签，一键复制，行号 |
-| 暗色模式 | 跟随系统 + 手动切换，无闪烁 |
-| 全站搜索 | `Ctrl+K` 唤起，标题 + 正文匹配，高亮显示 |
-| 评论系统 | Waline 评论区，支持暗色模式 |
-| RSS | 自动生成 RSS Feed |
-| 友链 | 好友链接 + 友链圈动态 + 健康检测 |
-| 文章系列 | 同系列文章自动归组 |
-| 分享按钮 | Twitter / 微信扫码 / 复制链接 / 原生分享 |
-| 阅读进度 | 顶部进度条 + 目录高亮 |
-| i18n | 中英文切换 |
-| PWA | 可安装，支持离线访问 |
-| SEO | Open Graph、Twitter Card、JSON-LD |
-| 响应式 | 移动端完美适配 |
+| Markdown / MDX | Support for standard Markdown and JSX components |
+| Math Formulas | KaTeX rendering for inline and block equations |
+| Mermaid Diagrams | Flowcharts, sequence diagrams, Gantt charts, etc. |
+| Code Highlighting | Shiki dual theme, language labels, one-click copy, line numbers |
+| Dark Mode | System preference sync + manual toggle, flicker-free |
+| Full-Site Search | Triggered with `Ctrl+K`, title + body match with highlighting |
+| Comment System | Waline comment area, dark mode support |
+| RSS | Automatically generated RSS Feed |
+| Friends | Friend links + friend circle dynamic updates + status health check |
+| Article Series | Automatic grouping of articles in the same series |
+| Share Buttons | Twitter / WeChat QR Code / Copy Link / Native Share |
+| Reading Progress | Top progress bar + TOC highlighting |
+| i18n | Multi-language switching support |
+| PWA | Installable, supports offline access |
+| SEO | Open Graph, Twitter Card, JSON-LD |
+| Responsive | Perfectly adapted to mobile devices |
 
-## 页面路由
+## Pages & Routes
 
-| 路径 | 页面 |
+| Path | Page |
 |------|------|
-| `/` | 首页（文章列表 + Hero） |
-| `/post/[...slug]` | 文章详情页 |
-| `/categories/[category]` | 分类页面 |
-| `/tags/[tag]` | 标签页面 |
-| `/archives` | 文章归档 |
-| `/weekly` | 周刊 |
-| `/friends` | 友链页面 |
-| `/about` | 关于页面 |
-| `/rss.xml` | RSS 订阅 |
+| `/` | Homepage (Post List + Hero) |
+| `/post/[...slug]` | Post Details Page |
+| `/categories/[category]` | Category Page |
+| `/tags/[tag]` | Tag Page |
+| `/archives` | Archive Page |
+| `/weekly` | Weekly Newsletter Page |
+| `/friends` | Friend Links Page |
+| `/about` | About Page |
+| `/rss.xml` | RSS Subscription |
 
-## 技术栈
+## Tech Stack
 
-- **框架**: Astro 6 + View Transitions
-- **样式**: Tailwind CSS v4（`@theme` 语法）
-- **代码高亮**: Shiki（双主题）
-- **数学公式**: remark-math + rehype-katex
-- **图表**: Mermaid.js
-- **评论**: Waline
-- **部署**: Vercel / Cloudflare Pages / 任意静态托管
+- **Framework**: Astro 6 + View Transitions
+- **Styling**: Tailwind CSS v4 (`@theme` syntax)
+- **Code Highlighter**: Shiki (Dual theme)
+- **Math Formulas**: remark-math + rehype-katex
+- **Diagrams**: Mermaid.js
+- **Comments**: Waline
+- **Deployment**: Vercel / Cloudflare Pages / Any static hosting
 
-> 使用 `Ctrl + K` 快捷键随时唤出搜索面板。
+> Press `Ctrl + K` to call out the search panel at any time.

@@ -1,45 +1,45 @@
 ---
-title: Mermaid 图表使用指南
-description: 在 Markdown 中使用 Mermaid 绘制流程图、序列图、甘特图等图表
+title: Mermaid Diagrams Guide
+description: Use Mermaid in Markdown to draw flowcharts, sequence diagrams, Gantt charts, etc.
 date: 2026-06-10
-tags: [教程, Mermaid, 图表]
-category: 教程
+tags: [Tutorial, Mermaid, Diagram]
+category: Tutorial
 cover: https://mermaid.js.org/images/header.png
 ---
 
-Mermaid 是一个基于 JavaScript 的图表绘制工具，可以通过类似 Markdown 的语法生成各种图表。在文章中使用 ` ```mermaid ` 代码块即可自动渲染。
+Mermaid is a JavaScript-based diagramming tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. Simply use the ` ```mermaid ` code block in your articles to render them automatically.
 
-## 流程图
+## Flowchart
 
 ```mermaid
 graph TD
-    A[开始] --> B{是否需要登录?}
-    B -->|是| C[输入账号密码]
-    B -->|否| D[直接访问]
-    C --> E{验证成功?}
-    E -->|是| D
-    E -->|否| C
-    D --> F[结束]
+    A[Start] --> B{Login Required?}
+    B -->|Yes| C[Enter Credentials]
+    B -->|No| D[Direct Access]
+    C --> E{Auth Success?}
+    E -->|Yes| D
+    E -->|No| C
+    D --> F[End]
 ```
 
-## 序列图
+## Sequence Diagram
 
 ```mermaid
 sequenceDiagram
-    participant U as 用户
-    participant B as 浏览器
-    participant S as 服务器
-    participant D as 数据库
+    participant U as User
+    participant B as Browser
+    participant S as Server
+    participant D as Database
 
-    U->>B: 输入查询条件
-    B->>S: 发送搜索请求
-    S->>D: 查询数据库
-    D-->>S: 返回结果
-    S-->>B: 返回 JSON 数据
-    B-->>U: 展示搜索结果
+    U->>B: Enter search criteria
+    B->>S: Send search request
+    S->>D: Query database
+    D-->>S: Return results
+    S-->>B: Return JSON data
+    B-->>U: Display search results
 ```
 
-## 类图
+## Class Diagram
 
 ```mermaid
 classDiagram
@@ -68,47 +68,47 @@ classDiagram
     Article "1" --> "*" Comment : has
 ```
 
-## 甘特图
+## Gantt Chart
 
 ```mermaid
 gantt
-    title 项目开发计划
+    title Project Development Plan
     dateFormat  YYYY-MM-DD
-    section 第一阶段
-    需求分析           :a1, 2025-06-01, 7d
-    UI 设计            :a2, after a1, 5d
-    section 第二阶段
-    前端开发           :b1, after a2, 10d
-    后端开发           :b2, after a2, 12d
-    section 第三阶段
-    测试               :c1, after b2, 5d
-    部署上线           :c2, after c1, 2d
+    section Phase 1
+    Requirements Analysis           :a1, 2025-06-01, 7d
+    UI Design            :a2, after a1, 5d
+    section Phase 2
+    Frontend Dev           :b1, after a2, 10d
+    Backend Dev           :b2, after a2, 12d
+    section Phase 3
+    Testing               :c1, after b2, 5d
+    Deployment & Launch           :c2, after c1, 2d
 ```
 
-## 饼图
+## Pie Chart
 
 ```mermaid
-pie title 技术栈占比
+pie title Tech Stack Breakdown
     "JavaScript" : 40
     "TypeScript" : 25
     "CSS" : 15
     "HTML" : 10
-    "其他" : 10
+    "Other" : 10
 ```
 
-## 状态图
+## State Diagram
 
 ```mermaid
 stateDiagram-v2
-    [*] --> 待审核
-    待审核 --> 审核通过 : 通过
-    待审核 --> 审核拒绝 : 拒绝
-    审核通过 --> 已发布 : 发布
-    审核拒绝 --> 待审核 : 重新提交
-    已发布 --> [*]
+    [*] --> Draft
+    Draft --> Approved : Approve
+    Draft --> Rejected : Reject
+    Approved --> Published : Publish
+    Rejected --> Draft : Resubmit
+    Published --> [*]
 ```
 
-## ER 图
+## ER Diagram
 
 ```mermaid
 erDiagram
@@ -142,16 +142,16 @@ erDiagram
     }
 ```
 
-## 总结
+## Summary
 
-| 图表类型 | 适用场景 |
+| Diagram Type | Use Cases |
 |----------|----------|
-| 流程图 | 业务流程、决策逻辑 |
-| 序列图 | 组件间交互、API 调用 |
-| 类图 | 面向对象设计 |
-| 甘特图 | 项目管理、时间规划 |
-| 饼图 | 数据可视化 |
-| 状态图 | 状态转换 |
-| ER 图 | 数据库设计 |
+| Flowchart | Business processes, decision logic |
+| Sequence Diagram | Component interactions, API calls |
+| Class Diagram | Object-oriented design |
+| Gantt Chart | Project management, timeline planning |
+| Pie Chart | Data visualization |
+| State Diagram | State transitions |
+| ER Diagram | Database design |
 
-Mermaid 图表自动适配暗色模式，主题跟随站点主题切换。
+Mermaid diagrams automatically adapt to dark mode and follow the site's active theme.

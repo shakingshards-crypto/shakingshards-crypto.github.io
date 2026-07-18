@@ -1,22 +1,22 @@
 ---
-title: 主题功能一览
-description: 介绍 Sify Blog 主题内置的全部功能，包括暗色模式、搜索、分享、评论、代码高亮、i18n、PWA 等。
+title: Theme Features Overview
+description: Introducing all built-in features of the Sify Blog theme, including dark mode, search, sharing, comments, code highlighting, i18n, PWA, etc.
 date: 2026-06-10
-tags: [Astro, 定制]
-category: 工具
+tags: [Astro, Customization]
+category: Tools
 cover: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200
 ---
 
-## 暗色模式
+## Dark Mode
 
-点击 Header 右侧的太阳/月亮图标切换亮色/暗色模式。
+Click the sun/moon icon on the right side of the Header to switch between light and dark modes.
 
-- 自动跟随系统偏好设置
-- 手动选择会存储到 `localStorage`
-- 页面加载前即应用主题，无闪烁
-- 所有组件均适配两种模式
+- Automatically follows system preference
+- Manual selections are saved to `localStorage`
+- Applied before page load to avoid flickering
+- All components are fully adapted to both modes
 
-实现原理：通过 `<html>` 元素的 `.dark` class 控制，配合 CSS 变量切换配色：
+Implementation principle: Controlled via the `.dark` class on the `<html>` element, using CSS variables to switch colors:
 
 ```css
 :root {
@@ -30,124 +30,124 @@ cover: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200
 }
 ```
 
-## 全站搜索
+## Site Search
 
-`Ctrl+K` 或点击搜索图标打开搜索面板。
+Press `Ctrl+K` or click the search icon to open the search panel.
 
-- 搜索标题、描述、分类、标签和文章正文
-- 多关键词 AND 匹配
-- 匹配词高亮显示
-- 显示上下文摘要片段
-- 最多返回 20 条结果
+- Search by title, description, category, tags, and article body
+- Multi-keyword AND matching
+- Matching words are highlighted
+- Contextual snippet preview
+- Up to 20 results returned
 
-## 文章目录
+## Table of Contents
 
-桌面端文章页右侧显示自动生成的目录导航（基于 h2/h3 标题）。
+The desktop layout displays an automatically generated Table of Contents (based on h2/h3 headings) on the right.
 
-- 滚动时自动高亮当前阅读位置
-- 点击平滑滚动到对应章节
-- 移动端通过底部「目录」按钮打开抽屉，支持 ESC 关闭
+- Automatically highlights the current reading position while scrolling
+- Click to smoothly scroll to the corresponding section
+- Mobile users can open it via the bottom "TOC" drawer button, supporting ESC to close
 
-## 阅读进度
+## Reading Progress
 
-文章页顶部显示一条细进度条，随阅读进度填充，让你清楚知道读到了哪里。
+A thin progress bar at the top of the post details page updates dynamically as you scroll, showing how far you have read.
 
-## 分享按钮
+## Share Buttons
 
-文章底部提供多种分享方式：
+Several sharing options are available at the bottom of each post:
 
-| 方式 | 说明 |
+| Method | Description |
 |------|------|
-| Twitter/X | 一键分享到 Twitter |
-| 微信 | 桌面端悬停显示二维码，移动端点击切换 |
-| 复制链接 | 一键复制文章链接 |
-| 原生分享 | 移动端调用系统分享面板 |
+| Twitter/X | Share to Twitter with one click |
+| WeChat | Hover to show QR Code on desktop, tap on mobile |
+| Copy Link | Copy post URL to clipboard |
+| Native Share | Invoke system sharing sheet on mobile devices |
 
-## 文章系列
+## Series
 
-通过 frontmatter 的 `series` 字段将相关文章归为一组：
+Group related posts together using the `series` field in the frontmatter:
 
 ```yaml
 ---
-series: Astro 教程
+series: Astro Tutorial
 ---
 ```
 
-同系列文章在侧边栏自动显示系列列表，当前文章高亮标注。
+A list of posts in the same series will automatically show in the sidebar, with the current post highlighted.
 
-## 评论系统
+## Comments
 
-使用 Waline 评论系统，支持：
+Uses the Waline comment system, supporting:
 
-- 昵称 / 邮箱 / 网址
-- Markdown 语法
-- 暗色模式自动适配
-- 需在 `src/components/waline/Comment.astro` 配置服务端地址
+- Nicknames / Emails / Websites
+- Markdown syntax
+- Automatic dark mode adaptivity
+- Configured via server address in `src/components/waline/Comment.astro`
 
-## 友链管理
+## Friend Links
 
-编辑 `public/links.json` 添加好友链接。友链页支持：
+Manage friend links by editing `public/links.json`. The friend links page features:
 
-- 好友卡片展示（头像、名称、简介）
-- 健康检测（自动检测链接可达性，绿/红状态指示）
-- 友链圈动态（需配置 `friendCircleServer`）
-- 特别推荐区块
+- Cards showing friend's avatar, name, and bio
+- Connectivity status check (automatically tests if the site is reachable, indicating status with green/red indicator)
+- Friend circle dynamics (requires `friendCircleServer` backend)
+- Dedicated Special Recommendations section
 
-## i18n 国际化
+## i18n Internationalization
 
-点击 Header 右侧的「中/EN」按钮切换语言。
+Click the "中/EN" language button on the right side of the Header to switch languages.
 
-- 支持中文和英文
-- 导航栏、页脚等 UI 文本自动翻译
-- 存储在 `localStorage.locale`
-- 翻译文件位于 `src/i18n/zh.ts` 和 `src/i18n/en.ts`
+- Supports English and Chinese
+- Header/Footer and navigation text are translated automatically
+- Language preference saved in `localStorage.locale`
+- Translations located in `src/i18n/zh.ts` and `src/i18n/en.ts`
 
-## 代码块增强
+## Code Block Enhancements
 
-所有代码块自动获得：
+All code blocks automatically feature:
 
-- **语言标签**：左上角显示语言名称
-- **一键复制**：右上角复制按钮，点击后显示 ✓
-- **行号**：左侧显示行号
-- **双主题**：亮色/暗色模式自动切换配色
+- **Language Labels**: Shows the language name at the top-left corner
+- **One-click Copy**: A copy button at the top-right corner (turns into ✓ when copied)
+- **Line Numbers**: Line numbers displayed on the left
+- **Dual Themes**: Automatically matches site theme (light/dark colors)
 
-## Mermaid 图表
+## Mermaid Diagrams
 
-使用 ` ```mermaid ` 代码块即可在文章中插入图表：
+Insert diagrams by writing a ` ```mermaid ` code block:
 
-````markdown
+```markdown
 ```mermaid
 graph LR
-    A[输入] --> B[处理] --> C[输出]
+    A[Input] --> B[Processing] --> C[Output]
 ```
-````
+```
 
-支持流程图、序列图、类图、甘特图、饼图、状态图、ER 图等。自动适配暗色模式。
+Supports flowcharts, sequence diagrams, class diagrams, Gantt charts, pie charts, state diagrams, ER diagrams, etc. Automatically adapts to dark mode.
 
-## RSS 订阅
+## RSS Feed
 
-自动生成 `/rss.xml`，包含全部已发布文章。订阅链接在 Header 社交图标和页面 `<head>` 中。
+Automatically generates `/rss.xml` containing all published posts. Subscription links are available in Header social icons and page `<head>`.
 
-## SEO 优化
+## SEO Optimization
 
-每页自动注入完整的 SEO 元数据：
+Each page is injected with complete SEO metadata:
 
-| Meta 标签 | 来源 |
+| Meta Tag | Source |
 |-----------|------|
-| `<title>` | `frontmatter.title + 站点名` |
+| `<title>` | `frontmatter.title + Site Title` |
 | `<meta description>` | `frontmatter.description` |
-| `og:title / og:image` | 文章标题 / 封面图 |
+| `og:title / og:image` | Post Title / Cover Image |
 | `twitter:card` | `summary_large_image` |
-| JSON-LD | 结构化数据（Article / WebPage） |
+| JSON-LD | Structured data (Article / WebPage) |
 
-## PWA 支持
+## PWA Support
 
-博客支持作为 PWA 安装到桌面/手机：
+The blog can be installed as a PWA on desktops or mobile phones:
 
-- Service Worker 缓存静态资源
-- 离线访问已缓存页面
-- 可添加到主屏幕
+- Service Worker caches static assets
+- Access cached pages offline
+- Add to Home Screen support
 
-## 回到顶部
+## Back to Top
 
-滚动超过 300px 后，右下角出现回到顶部按钮，点击平滑滚动回顶部。
+A Back to Top button appears at the bottom-right corner when scrolling past 300px. Click to smoothly scroll back to the top.

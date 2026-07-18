@@ -39,12 +39,12 @@ const categories = Array.from(categoryMap.entries())
 const totalPosts = allPosts.length;
 ---
 
-<BlogLayout title="分类">
+<BlogLayout title="Categorías">
   <header class="mb-10">
-    <p class="text-sm text-primary font-medium mb-2 tracking-wide uppercase">Categories</p>
-    <h1 class="text-3xl sm:text-4xl font-bold mb-3">探索内容分类</h1>
+    <p class="text-sm text-primary font-medium mb-2 tracking-wide uppercase">Categorías</p>
+    <h1 class="text-3xl sm:text-4xl font-bold mb-3">Categorías</h1>
     <p class="text-gray-500 dark:text-gray-400">
-      共 <span class="text-primary font-semibold">{categories.length}</span> 个分类，<span class="text-primary font-semibold">{totalPosts}</span> 篇文章
+      Un total de <span class="text-primary font-semibold">{categories.length}</span> categorías y <span class="text-primary font-semibold">{totalPosts}</span> publicaciones
     </p>
   </header>
 
@@ -66,7 +66,7 @@ const totalPosts = allPosts.length;
           )}
         </div>
         <span class="text-sm text-gray-400 dark:text-gray-500 shrink-0">
-          {cat.count} 篇
+          {cat.count} publicaciones
         </span>
         <svg class="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-primary transition-colors shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />

@@ -1,5 +1,5 @@
 export const SITE_TITLE = 'Sify Blog';
-export const SITE_DESCRIPTION = '一个基于 Astro 的现代化博客主题';
+export const SITE_DESCRIPTION = 'Un blog moderno basado en Astro';
 export const SITE_AUTHOR = 'santisify';
 export const SITE_URL = 'https://santisify.top';
 export const SITE_AVATAR = 'https://santisify.top/_vercel/image?url=_astro%2Favatar.BpCip-1B.png&w=1200&q=100';
@@ -8,11 +8,11 @@ export const SITE_COVER = 'https://santisify.top/_vercel/image?url=_astro%2Fcf22
 export const PAGE_SIZE = 10;
 
 export const NAV_ITEMS = [
-  { label: '首页', href: '/' },
-  { label: '周刊', href: '/weekly' },
-  { label: '文章', href: '/archives' },
-  { label: '友链', href: '/friends' },
-  { label: '关于', href: '/about' },
+  { label: 'Inicio', href: '/' },
+  { label: 'Semanal', href: '/weekly' },
+  { label: 'Archivo', href: '/archives' },
+  { label: 'Amigos', href: '/friends' },
+  { label: 'Sobre mí', href: '/about' },
 ];
 
 export const SOCIAL_LINKS = [
@@ -21,5 +21,5 @@ export const SOCIAL_LINKS = [
 ];
 
 export const npmCDN = '';
-export const walineServer = 'https://waline.lazy-boy-acmer.cn';//已添加安全域名，若有需要，自行部署
-export const friendCircleServer = 'https://fcl.santisify.top';//已添加安全域名，若有需要，自行部署
+export const walineServer = 'https://waline.lazy-boy-acmer.cn';// Safe domain added, deploy yourself if needed
+export const friendCircleServer = 'https://fcl.santisify.top';// Safe domain added, deploy yourself if needed

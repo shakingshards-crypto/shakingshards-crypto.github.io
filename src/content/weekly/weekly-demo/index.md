@@ -1,25 +1,25 @@
 ---
-title: 周刊 #1 — 本周前端动态
-description: 第一期周刊，包含 Astro 6.x 更新、Tailwind CSS v4 实践、Bun 生态进展等前端技术动态。
+title: Weekly #1 — Frontend News of the Week
+description: The first issue of the weekly newsletter, featuring Astro 6.x updates, Tailwind CSS v4 practices, Bun ecosystem progress, and other frontend technical news.
 date: 2026-06-10
-tags: [前端, Astro, CSS]
+tags: [Frontend, Astro, CSS]
 issue: 1
 cover: https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200
 ---
 
-## 本周推荐
+## Recommended This Week
 
-### Astro 6.x 正式发布
+### Astro 6.x Released
 
-Astro 6 带来了全新的内容层 API 和更快的构建速度。
+Astro 6 brings a brand new Content Layer API and faster build speeds.
 
-- 新的 `content.config.ts` 替代 `content/config.ts`
-- `unified()` 处理器统一 Markdown/MDX 插件配置
-- 构建速度提升约 30%
+- New `content.config.ts` replacing `content/config.ts`
+- `unified()` processor unifying Markdown/MDX plugin configurations
+- Build speeds increased by approximately 30%
 
 ### Tailwind CSS v4
 
-Tailwind CSS v4 采用 CSS-first 配置方式，无需 `tailwind.config.js`：
+Tailwind CSS v4 adopts a CSS-first configuration method, eliminating the need for `tailwind.config.js`:
 
 ```css
 @import 'tailwindcss';
@@ -31,23 +31,23 @@ Tailwind CSS v4 采用 CSS-first 配置方式，无需 `tailwind.config.js`：
 
 ### Bun 1.3
 
-Bun 1.3 改进了包管理器的稳定性和兼容性：
+Bun 1.3 improves package manager stability and compatibility:
 
-- 更快的 `bun install`
-- 改进的 Node.js 兼容层
-- 新增 `bun build` 优化
+- Faster `bun install`
+- Improved Node.js compatibility layer
+- Added `bun build` optimizations
 
-## 工具推荐
+## Tools Recommendation
 
-| 工具 | 用途 |
+| Tool | Purpose |
 |------|------|
-| [Waline](https://waline.js.org) | 轻量评论系统 |
-| [KaTeX](https://katex.org) | Web 数学公式渲染 |
-| [Shiki](https://shiki.style) | 代码语法高亮 |
+| [Waline](https://waline.js.org) | Lightweight comment system |
+| [KaTeX](https://katex.org) | Web math formula rendering |
+| [Shiki](https://shiki.style) | Code syntax highlighting |
 
-## 代码片段
+## Code Snippet
 
-### React 自定义 Hook
+### React Custom Hook
 
 ```typescript
 function useDebounce<T>(value: T, delay: number): T {
@@ -62,7 +62,7 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 ```
 
-### CSS Grid 响应式布局
+### CSS Grid Responsive Layout
 
 ```css
 .grid-layout {
@@ -72,12 +72,12 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 ```
 
-## 精选文章
+## Selected Articles
 
 - [Content Collections in Astro 6](https://docs.astro.build/en/guides/content-collections/)
 - [MDX Guide](https://docs.astro.build/en/guides/integrations-guide/mdx/)
 - [CSS Container Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_container_queries)
 
-## 下期预告
+## Coming Next
 
-下期将介绍 TypeScript 5.5 新特性和 React 19 更新。敬请期待！
+In the next issue, we will introduce the new features of TypeScript 5.5 and React 19 updates. Stay tuned!
